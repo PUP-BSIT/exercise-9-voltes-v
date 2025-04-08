@@ -68,7 +68,6 @@ def update_movie(movie_list):
 def delete_movie():
     pass
 
-#TODO(Caculitan): Search for a movie by title
 def search_movie(movie_list):
     title_to_search = input("Enter the title to search for: ")
 
