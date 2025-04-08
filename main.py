@@ -20,17 +20,50 @@ def list_all_movies(movie_list):
         for key, value in movie.items():
             print(f"  {key.capitalize()}: {value}")
 
-#TODO(CORPUS): Ensure that the Director and Genre fields do not accept numbers,
-# and the Release Year and Rating fields do not accept letters."
-
 def add_movie(movie_list):
     print("\nAdd New Movie")
+
+    title = input("Enter title: ")
+
+    while True:
+        director = input("Enter director: ")
+        if any(char.isdigit() for char in director):
+            print("Director name should not contain numbers.")
+        else:
+            break
+
+    while True:
+        genre = input("Enter genre: ")
+        if any(char.isdigit() for char in genre):
+            print("Genre should not contain numbers.")
+        else:
+            break
+
+    while True:
+        release_year_input = input("Enter release year: ")
+        if release_year_input.isdigit():
+            release_year = int(release_year_input)
+            break
+        else:
+            print("Release year must be a number.")
+
+    while True:
+        rating_input = input("Enter rating (1 - 10): ")
+        try:
+            rating = float(rating_input)
+            if rating_input.replace('.', '', 1).isdigit() and 1 <= rating <= 10:
+                break
+            else:
+                print("Rating must be a number between 1 and 10.")
+        except ValueError:
+            print("Invalid input. Rating must be a number.")
+
     movie = {
-        "title": input("Enter title: "),
-        "director": input("Enter director: "),
-        "genre": input("Enter genre: "),
-        "release_year": input("Enter release year: "),
-        "rating": input("Enter rating (1 - 10): ")
+        "title": title,
+        "director": director,
+        "genre": genre,
+        "release_year": release_year,
+        "rating": rating
     }
     movie_list.append(movie)
     print("\nMovie added successfully.")
@@ -107,7 +140,7 @@ def main():
     while True:
         display_menu()
         choice = input("Select an option (1-6): ")
-                
+
 
         if choice == '1':
             list_all_movies(movie_list)
