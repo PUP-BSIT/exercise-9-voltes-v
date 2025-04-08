@@ -24,9 +24,45 @@ def add_movie(movie_list):
     movie_list.append(movie)
     print("Movie added successfully.")
 
-#TODO(Pineda): Update movie details
-def update_movie():
-    pass
+def update_movie(movie_list):
+    title_to_update = input("Enter the title of the movie to update: ")
+
+    for movie in movie_list:
+        if movie["title"].lower() == title_to_update.lower():
+            print("Movie found. Leave input blank to keep current value.")
+
+            new_title = input(
+                f"Enter new title [{movie['title']}]: "
+            ) or movie["title"]
+
+            new_director = input(
+                f"Enter new director [{movie['director']}]: "
+            ) or movie["director"]
+
+            new_genre = input(
+                f"Enter new genre [{movie['genre']}]: "
+            ) or movie["genre"]
+
+            new_year = input(
+                f"Enter new release year [{movie['release_year']}]: "
+            ) or movie["release_year"]
+
+            new_rating = input(
+                f"Enter new rating [{movie['rating']}]: "
+            ) or movie["rating"]
+
+            movie.update({
+                "title": new_title,
+                "director": new_director,
+                "genre": new_genre,
+                "release_year": new_year,
+                "rating": new_rating
+            })
+
+            print("Movie details updated successfully!.")
+            return
+
+    print("Movie not found.")
 
 #TODO(Morales): Delete a movie from the list
 def delete_movie():
