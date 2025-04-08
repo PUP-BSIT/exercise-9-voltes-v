@@ -68,10 +68,10 @@ def update_movie(movie_list):
 def delete_movie():
     pass
 
-#TODO(Gulles): Search for a movie by title
+#TODO(Caculitan): Search for a movie by title
 def search_movie():
     pass
 
-#TODO(Caculitan): Handle Program Loop and User Interface
+#TODO(Gulles): Handle Program Loop and User Interface
 def main():
     pass
