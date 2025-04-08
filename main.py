@@ -1,14 +1,28 @@
-#TODO(Name): Display the Main Menu Options
+#TODO(Gulles): Display the Main Menu Options
 def display_menu():
     pass
 
-#TODO(Corpus): Display all movie records
-def list_all_movies():
-    pass
+def list_all_movies(movie_list):
+    if not movie_list:
+        print("No movies found.")
+        return
 
-#TODO(Corpus): Add a new movie to the list
-def add_movie():
-    pass
+    for index, movie in enumerate(movie_list, start=1):
+        print(f"\nMovie {index}:")
+        for key, value in movie.items():
+            print(f"  {key.capitalize()}: {value}")
+
+def add_movie(movie_list):
+    print("\nAdd New Movie")
+    movie = {
+        "title": input("Enter title: "),
+        "director": input("Enter director: "),
+        "genre": input("Enter genre: "),
+        "release_year": input("Enter release year: "),
+        "rating": input("Enter rating (1 - 10): ")
+    }
+    movie_list.append(movie)
+    print("Movie added successfully.")
 
 #TODO(Pineda): Update movie details
 def update_movie():
@@ -18,10 +32,10 @@ def update_movie():
 def delete_movie():
     pass
 
-#TODO(Name 2): Search for a movie by title
+#TODO(Gulles): Search for a movie by title
 def search_movie():
     pass
 
-#TODO(Name 1): Handle Program Loop and User Interface
+#TODO(Caculitan): Handle Program Loop and User Interface
 def main():
     pass
