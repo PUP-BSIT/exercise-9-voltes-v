@@ -69,8 +69,20 @@ def delete_movie():
     pass
 
 #TODO(Caculitan): Search for a movie by title
-def search_movie():
-    pass
+def search_movie(movie_list):
+    title_to_search = input("Enter the title to search for: ")
+
+    found = False
+    for movie in movie_list:
+        if movie["title"].lower() == title_to_search.lower():
+            print("\nMovie found:")
+            for key, value in movie.items():
+                print(f"  {key.capitalize()}: {value}")
+            found = True
+            break
+
+    if not found:
+        print("Movie not found.")
 
 #TODO(Gulles): Handle Program Loop and User Interface
 def main():
