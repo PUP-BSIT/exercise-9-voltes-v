@@ -64,9 +64,16 @@ def update_movie(movie_list):
 
     print("Movie not found.")
 
-#TODO(Morales): Delete a movie from the list
-def delete_movie():
-    pass
+def delete_movie(movie_list):
+    title_to_delete = input("Enter the title of the movie to delete: ")
+
+    for movie in movie_list:
+        if movie["title"].lower() == title_to_delete.lower():
+            movie_list.remove(movie)
+            print("Movie deleted successfully.")
+            return
+
+    print("Movie not found.")
 
 def search_movie(movie_list):
     title_to_search = input("Enter the title to search for: ")
