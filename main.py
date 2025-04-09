@@ -62,7 +62,7 @@ def add_movie(movie_list):
         "title": title,
         "director": director,
         "genre": genre,
-        "release_year": release_year,
+        "release year": release_year,
         "rating": rating
     }
     movie_list.append(movie)
@@ -88,8 +88,8 @@ def update_movie(movie_list):
             ) or movie["genre"]
 
             new_year = input(
-                f"Enter new release year [{movie['release_year']}]: "
-            ) or movie["release_year"]
+                f"Enter new release year [{movie['release year']}]: "
+            ) or movie["release year"]
 
             new_rating = input(
                 f"Enter new rating [{movie['rating']}]: "
@@ -99,7 +99,7 @@ def update_movie(movie_list):
                 "title": new_title,
                 "director": new_director,
                 "genre": new_genre,
-                "release_year": new_year,
+                "release year": new_year,
                 "rating": new_rating
             })
 
